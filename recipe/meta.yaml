@@ -1,6 +1,6 @@
 {% set name = "spinsfast" %}
-{% set version = "104.2019.3.20.13.47.8" %}
-{% set sha256 = "bc92536cb0318b5f69eb1c9bca3e800f9d070909a75e3caf2fd199f0054c3ba2" %}
+{% set version = "104.2020.8.19.11.8.18" %}
+{% set sha256 = "a7b29fbfd0f2339a7315b00c88965efd35e6305dfd632707d6d949e54fa0704c" %}
 
 package:
   name: {{ name|lower }}
@@ -11,10 +11,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  script: package_version={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv           # [not win]
+  number: 0
+  script: package_version={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [not win]
   #script: set "package_version={{ version }}" && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [win]
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
@@ -38,7 +38,7 @@ about:
   license: GPL3
   license_family: GPL
   license_file: LICENSE
-  summary: 'Fast and exact spin-s spherical-harmonic transforms'
+  summary: Fast and exact spin-s spherical-harmonic transforms
   dev_url: https://github.com/moble/spinsfast
 
 extra:
