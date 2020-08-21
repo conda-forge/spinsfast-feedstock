@@ -12,8 +12,6 @@ source:
 
 build:
   number: 4
-  script: package_version={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [not win]
-  script: set "package_version={{ version }}" && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [win]
 
 requirements:
   build:
