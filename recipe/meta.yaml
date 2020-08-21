@@ -18,12 +18,12 @@ requirements:
     - {{ compiler('c') }}                # [not win]
     - {{ compiler('m2w64_c') }}          # [win]
   host:
-    - python ==2.7
+    - python  {{ python }}
     - pip
     - numpy
     - fftw
   run:
-    - python ==2.7
+    - python
     - {{ pin_compatible('numpy') }}
     - fftw
 
