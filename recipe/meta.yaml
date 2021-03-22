@@ -1,6 +1,6 @@
 {% set name = "spinsfast" %}
-{% set version = "104.2020.8.20.0.32.20" %}
-{% set sha256 = "f211409f122be88363b0466beb783959fafe4a30c6b31060856479c714f69860" %}
+{% set version = "104.2021.3.22.15.7.51" %}
+{% set sha256 = "dfe148e53fe4a147654e929b6dfe26853d809fcb2393876dc5088685afb0c364" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 0
   script: package_version={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [not win]
   #script: set "package_version={{ version }}" && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [win]
   skip: true  # [win]
