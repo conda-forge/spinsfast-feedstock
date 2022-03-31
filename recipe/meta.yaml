@@ -1,6 +1,6 @@
 {% set name = "spinsfast" %}
-{% set version = "104.2022.3.2.14.39.8" %}
-{% set sha256 = "b0cee447644e8e6b54b56f069f48f2c3846cd80775b684332202b6ff5362765f" %}
+{% set version = "104.2022.7" %}
+{% set sha256 = "f7be5cadf0dab3e4d84ddf0721a3d6bbaef9386e329be528c8fe2b996149a0fe" %}
 
 package:
   name: {{ name|lower }}
