@@ -11,9 +11,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: package_version={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv  # [not win]
-  skip: true  # [win]
+  skip: true  # [win or py<38]
+  number: 1
+  script: /bin/rm -f pyproject.toml && {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv  # [not win]
 
 requirements:
   build:
