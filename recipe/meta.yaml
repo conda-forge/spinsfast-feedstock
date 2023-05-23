@@ -1,6 +1,6 @@
 {% set name = "spinsfast" %}
-{% set version = "2022.4.1" %}
-{% set sha256 = "e9f5842a0ec2bf2796c9efe9f1d1c85f706a37890588272ce9cf079961c5e772" %}
+{% set version = "2022.4.2" %}
+{% set sha256 = "e398aa5165c79a225f1e3883ce7ca71b049ea7b05589d0ad8282f965afa74a85" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   skip: true  # [win or py<38]
-  number: 3
+  number: 0
   script: /bin/rm -f pyproject.toml && {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv  # [not win]
 
 requirements:
