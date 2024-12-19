@@ -1,18 +1,18 @@
 {% set name = "spinsfast" %}
-{% set version = "2022.4.6" %}
-{% set sha256 = "ca1b5b43fe555df36c90ea97568ee0a239addf5a56506fcf7bbe04721ac9be9f" %}
+{% set version = "2022.4.7" %}
+{% set sha256 = "db22344863de2983c37d9b2699350ad81e6743f8d1a548a3d50265334a89e7a2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   skip: true  # [win or py<38]
-  number: 1
+  number: 0
   script: /bin/rm -f pyproject.toml && {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv  # [not win]
 
 requirements:
