@@ -1,0 +1,55 @@
+schema_version: 1
+
+context:
+  name: spinsfast
+  version: "2022.4.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: a404c91d34e6df54741c925416d6a5be89a9801446af3a0e55280756e491baad
+
+build:
+  number: 2
+  skip:
+    - win
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - setuptools
+    - if: build_platform != target_platform
+      then:
+        - cross-python_${{ target_platform }}
+        - numpy
+        - python
+  host:
+    - fftw
+    - setuptools
+    - numpy
+    - pip
+    - python
+  run:
+    - fftw
+    - python
+
+tests:
+  - python:
+      imports:
+        - spinsfast
+
+about:
+  summary: Fast and exact spin-s spherical-harmonic transforms
+  homepage: https://github.com/moble/spinsfast
+  repository: https://github.com/moble/spinsfast
+  license: GPL-3.0-only
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - moble
