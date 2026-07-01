@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: spinsfast
-  version: "2022.4.10"
+  version: "2022.4.11"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: a404c91d34e6df54741c925416d6a5be89a9801446af3a0e55280756e491baad
+  sha256: a0b00df44816493ffeba4fa0e113e6c533a13ea9377adb3abca45b3dd8fdc323
 
 build:
-  number: 2
+  number: 0
   skip:
     - win
   script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
